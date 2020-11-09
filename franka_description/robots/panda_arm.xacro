@@ -11,6 +11,11 @@
       </joint>
     </xacro:unless>
     <link name="${arm_id}_link0">
+  <inertial>
+     <mass value="2.90428"/>
+     <origin rpy="0 0 0" xyz="-0.041271 -1.158905e-05 0.07"/>
+     <inertia ixx="0.013404" ixy="0.0" ixz="0.0" iyy="0.017065" iyz="0.0" izz="0.020982"/>
+  </inertial>
       <visual>
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/visual/link0.dae"/>
@@ -36,6 +41,11 @@
       </collision>
     </link>
     <link name="${arm_id}_link1">
+  <inertial>
+     <mass value="2.43555"/>
+     <origin rpy="0 0 0" xyz="-6.740570e-06 -0.037189 -0.068499"/>
+     <inertia ixx="0.019285" ixy="0.0" ixz="0.0" iyy="0.014839" iyz="0.0" izz="0.009358"/>
+  </inertial>
       <visual>
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/visual/link1.dae"/>
@@ -69,6 +79,11 @@
       <limit effort="87" lower="-2.8973" upper="2.8973" velocity="2.1750"/>
     </joint>
     <link name="${arm_id}_link2">
+  <inertial>
+     <mass value="2.45569"/>
+     <origin rpy="0 0 0" xyz="-1.344109e-05 -0.069488 0.037195"/>
+     <inertia ixx="0.019648" ixy="0.0" ixz="0.0" iyy="0.009436" iyz="0.0" izz="0.015168"/>
+  </inertial>
       <visual>
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/visual/link2.dae"/>
@@ -102,6 +117,11 @@
       <limit effort="87" lower="-1.7628" upper="1.7628" velocity="2.1750"/>
     </joint>
     <link name="${arm_id}_link3">
+  <inertial>
+     <mass value="2.73471"/>
+     <origin rpy="0 0 0" xyz="0.041242 0.028026 -0.032999"/>
+     <inertia ixx="0.013344" ixy="0.0" ixz="0.0" iyy="0.015505" iyz="0.0" izz="0.01473"/>
+  </inertial>
       <visual>
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/visual/link3.dae"/>
@@ -135,6 +155,11 @@
       <limit effort="87" lower="-2.8973" upper="2.8973" velocity="2.1750"/>
     </joint>
     <link name="${arm_id}_link4">
+  <inertial>
+     <mass value="2.78106"/>
+     <origin rpy="0 0 0" xyz="-0.041256 0.0345 0.028032"/>
+     <inertia ixx="0.013816" ixy="0.0" ixz="0.0" iyy="0.014979" iyz="0.0" izz="0.016014"/>
+  </inertial>
       <visual>
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/visual/link4.dae"/>
@@ -168,6 +193,11 @@
       <limit effort="87" lower="-3.0718" upper="-0.0698" velocity="2.1750"/>
     </joint>
     <link name="${arm_id}_link5">
+  <inertial>
+     <mass value="3.07672"/>
+     <origin rpy="0 0 0" xyz="-8.943558e-06 0.03747 -0.103401"/>
+     <inertia ixx="0.033599" ixy="0.0" ixz="0.0" iyy="0.027932" iyz="0.0" izz="0.011871"/>
+  </inertial>
       <visual>
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/visual/link5.dae"/>
@@ -220,6 +250,11 @@
       <limit effort="12" lower="-2.8973" upper="2.8973" velocity="2.6100"/>
     </joint>
     <link name="${arm_id}_link6">
+  <inertial>
+     <mass value="1.16471"/>
+     <origin rpy="0 0 0" xyz="0.042059 0.015232 0.006132"/>
+     <inertia ixx="0.002689" ixy="0.0" ixz="0.0" iyy="0.004117" iyz="0.0" izz="0.004855"/>
+  </inertial>
       <visual>
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/visual/link6.dae"/>
@@ -253,6 +288,11 @@
       <limit effort="12" lower="-0.0175" upper="3.7525" velocity="2.6100"/>
     </joint>
     <link name="${arm_id}_link7">
+  <inertial>
+     <mass value="0.418267"/>
+     <origin rpy="0 0 0" xyz="0.01864 0.018625 0.0794"/>
+     <inertia ixx="0.000652" ixy="0.0" ixz="0.0" iyy="0.000652" iyz="0.0" izz="0.001095"/>
+  </inertial>
       <visual>
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/visual/link7.dae"/>
@@ -286,6 +326,11 @@
       <limit effort="12" lower="-2.8973" upper="2.8973" velocity="2.6100"/>
     </joint>
     <link name="${arm_id}_link8">
+      <inertial>
+        <mass value="0.01"/>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
+      </inertial>
       <collision>
         <origin xyz="0.0424 0.0424 -0.0250" rpy="${pi} ${pi/2} ${pi/2}"/>
         <geometry>

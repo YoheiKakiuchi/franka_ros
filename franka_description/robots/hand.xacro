@@ -10,11 +10,23 @@
       </joint>
     </xacro:unless>
     <link name="${ns}_hand">
+      <inertial>
+        <mass value="0.01"/>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.000001" iyz="0.0" izz="0.000001"/>
+      </inertial>
       <visual>
         <geometry>
           <mesh filename="package://franka_description/meshes/visual/hand.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0285" />
+        <geometry>
+          <box size="0.056 0.2 0.074" />
+        </geometry>
+      </collision>
+      <!--
       <collision>
         <origin xyz="0 0 0.04" rpy="0 ${pi/2} ${pi/2}"/>
         <geometry>
@@ -51,21 +63,44 @@
           <sphere radius="${0.02+safety_distance}"  />
         </geometry>
       </collision>
+      -->
     </link>
     <link name="${ns}_leftfinger">
+  <inertial>
+     <mass value="0.014505"/>
+     <origin rpy="0 0 0" xyz="3.299713e-07 0.013131 0.027017"/>
+     <inertia ixx="4.338623e-06" ixy="0.0" ixz="0.0" iyy="4.027488e-06" iyz="0.0" izz="1.377502e-06"/>
+  </inertial>
       <visual>
         <geometry>
           <mesh filename="package://franka_description/meshes/visual/finger.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin xyz="0.0 0.0131 0.027" />
+        <geometry>
+          <box size="0.021 0.02643 0.0538" />
+        </geometry>
+      </collision>
     </link>
     <link name="${ns}_rightfinger">
+  <inertial>
+     <mass value="0.014505"/>
+     <origin rpy="0 0 0" xyz="3.299713e-07 0.013131 0.027017"/>
+     <inertia ixx="4.338623e-06" ixy="0.0" ixz="0.0" iyy="4.027488e-06" iyz="0.0" izz="1.377502e-06"/>
+  </inertial>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
         <geometry>
           <mesh filename="package://franka_description/meshes/visual/finger.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin xyz="0.0 -0.0131 0.027" rpy="0 0 ${pi}"/>
+        <geometry>
+          <box size="0.021 0.02643 0.0538" />
+        </geometry>
+      </collision>
    </link>
     <joint name="${ns}_finger_joint1" type="prismatic">
       <parent link="${ns}_hand"/>
