@@ -1,0 +1,10 @@
+<robot file="/path_to/dual_panda.dae">
+  <manipulator name="larm" >
+    <base>left_link0</base>
+    <effector>left_link8</effector>
+    <Translation>0 0 0.06</Translation>
+    <rotationaxis>0 0 0 0</rotationaxis>
+  </manipulator>
+</robot>
+<!-- rosrun xacro xacro -inorder robots/dual_panda_robot.urdf.xacro > dual_panda.urdf -->
+<!-- rosrun collada_urdf urdf_to_collada dual_panda.urdf dual_panda.dae -->

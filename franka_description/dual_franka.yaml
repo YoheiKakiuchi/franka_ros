@@ -1,0 +1,37 @@
+rarm:
+  - right_joint1 : rarm-collar-y
+  - right_joint2 : rarm-shoulder-p
+  - right_joint3 : rarm-shoulder-y
+  - right_joint4 : rarm-elbow-p
+  - right_joint5 : rarm-wrist-r
+  - right_joint6 : rarm-wrist-p
+  - right_joint7 : rarm-wrist-y
+  - right_finger_joint1 : rarm-hand1
+  - right_finger_joint2 : rarm-hand2
+larm:
+  - left_joint1 : larm-collar-y
+  - left_joint2 : larm-shoulder-p
+  - left_joint3 : larm-shoulder-y
+  - left_joint4 : larm-elbow-p
+  - left_joint5 : larm-wrist-r
+  - left_joint6 : larm-wrist-p
+  - left_joint7 : larm-wrist-y
+  - left_finger_joint1 : larm-hand1
+  - left_finger_joint2 : larm-hand2
+head:
+  - pan_tilt_JOINT0 : head-neck-y
+  - pan_tilt_JOINT1 : head-neck-p
+
+rarm-end-coords:
+  parent: right_link7
+  translate: [0, 0, 0.2]
+  rotate : [0.67859834454585, -0.28108463771482, 0.67859834454585, 148.6]
+larm-end-coords:
+  parent: left_link7
+  translate: [0, 0, 0.2]
+  rotate : [0.67859834454585, -0.28108463771482, 0.67859834454585, 148.6]
+
+angle-vector:
+  reset-pose: [ 0.0, 15.0, 0.0, -135.0, 0.0, 150.0, 45.0, 0.0, 0.0,
+                0.0, 15.0, 0.0, -135.0, 0.0, 150.0, 45.0, 0.0, 0.0,
+                0.0, -45.0]

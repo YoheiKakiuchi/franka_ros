@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find ur_e_description)/pan_tilt/pan_tilt_base.urdf.xacro" />
+  <xacro:include filename="$(find ur_e_description)/pan_tilt/kinect.urdf.xacro" />
+  <!--xacro:include filename="$(find openni_description)/model/kinect.urdf.xacro" /-->
+
+  <xacro:macro name="pan_tilt_kinect"
+               params="prefix:=''" >
+    <xacro:pan_tilt_robot prefix="${prefix}pan_tilt_" />
+    <xacro:property name="M_PI" value="${pi}" />
+    <xacro:sensor_kinect parent="${prefix}pan_tilt_LINK1" cam_px="-0.08" cam_py="0.03" cam_pz="-0.045"
+                         cam_or="-1.57079633" cam_op="0.0" cam_oy="1.57079633" />
+  </xacro:macro>
+</robot>

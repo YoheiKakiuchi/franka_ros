@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<robot name="pan_tilt_kinect_robot"
+       xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find ur_e_description)/pan_tilt/pan_tilt_kinect.urdf.xacro" />
+
+  <xacro:pan_tilt_kinect />
+
+</robot>
