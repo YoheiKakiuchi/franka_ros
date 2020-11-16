@@ -58,10 +58,39 @@
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
     </model>
-
-    <!--include>
-      <pose>1.5449 -0.2860 0.440 0.00 0.00 1.3883</pose>
+    <!-- -->
+    <include>
+      <pose>0.34 0.55 0.82 -0.00 0.00 1.5708 </pose>
+      <uri>model://jsk_toolbox_metal</uri>
+    </include>
+    <!-- -->
+    <include>
+      <pose>0.364 -0.220 0.825  0.00 0.00 0.213</pose>
       <uri>model://jsk_wrench</uri>
-    </include-->
+    </include>
+    <include>
+      <pose>0.222 0.132 0.825  0.00 0.00 2.50</pose>
+      <uri>model://jsk_screw_driver</uri>
+    </include>
+    <include>
+      <pose>0.36 -0.079 0.830  0.00 0.00 -0.37</pose>
+      <uri>model://jsk_plier</uri>
+    </include>
+    <include>
+      <pose>0.094 -0.052 0.835  0.00 0.00 0.00</pose>
+      <uri>model://jsk_hammer</uri>
+    </include>
+    <include>
+      <pose>0.453 0.152 0.825  0.00 0.00 0.105</pose>
+      <uri>model://jsk_open_end_wrench</uri>
+    </include>
+    <include>
+      <pose>0.281 0.298 0.83  0.00 0.00 0.10</pose>
+      <uri>model://jsk_cutter</uri>
+    </include>
+    <include>
+      <pose>0.31 -0.52 0.82 -0.00 0.00 1.5708 </pose>
+      <uri>model://tray</uri>
+    </include>
   </world>
 </sdf>

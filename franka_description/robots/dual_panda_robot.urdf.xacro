@@ -9,11 +9,11 @@
   <xacro:arg name="arm_id_1" default="right" />
   <xacro:arg name="arm_id_2" default="left" />
   <!-- right arm with gripper -->
-  <xacro:panda_arm arm_id="$(arg arm_id_1)" connected_to="fixed_base"  xyz="0 -0.3 0" safety_distance="0.03"/>
+  <xacro:panda_arm arm_id="$(arg arm_id_1)" connected_to="fixed_base"  xyz="-0.02 -0.3 0.0" safety_distance="0.03"/>
   <xacro:hand ns="$(arg arm_id_1)" rpy="0 0 ${-pi/4}" connected_to="$(arg arm_id_1)_link8" safety_distance="0.03"/>
 
   <!-- left arm with gripper -->
-  <xacro:panda_arm arm_id="$(arg arm_id_2)" connected_to="fixed_base"  xyz="0 0.3 0" safety_distance="0.03"/>
+  <xacro:panda_arm arm_id="$(arg arm_id_2)" connected_to="fixed_base"  xyz="-0.02  0.3 0.0" safety_distance="0.03"/>
   <xacro:hand ns="$(arg arm_id_2)" rpy="0 0 ${-pi/4}" connected_to="$(arg arm_id_2)_link8" safety_distance="0.03"/>
 
   <link name="fixed_base" />
@@ -47,7 +47,7 @@
     <origin xyz="-0.08 0.0 0.8" rpy="0.0 0.0 0.0" />
   </joint>
 
-  <link name="table_plane">
+  <!--link name="table_plane">
     <visual>
       <origin xyz="0.3 0 0.01" />
       <geometry>
@@ -63,7 +63,7 @@
         <box size="0.6 1.2 0.02" />
       </geometry>
     </collision>
-  </link>
+  </link-->
   <link name="controller_plane0">
     <visual>
       <origin xyz="0.3 0 0.01" />
@@ -85,11 +85,11 @@
     </visual>
   </link>
 
-  <joint name="base_to_table_plane" type="fixed">
+  <!--joint name="base_to_table_plane" type="fixed">
     <parent link="dual_arm_base" />
     <child  link="table_plane" />
     <origin xyz="0.0 0.0 0.8" rpy="0.0 0.0 0.0" />
-  </joint>
+  </joint-->
   <joint name="base_to_c_plane0" type="fixed">
     <parent link="dual_arm_base" />
     <child  link="controller_plane0" />
@@ -165,7 +165,8 @@
   <link name="display">
    <visual>
      <geometry>
-       <box size="0.03 0.817 0.342"/>
+       <!--box size="0.03 0.817 0.342"/--> <!-- 34inch wide -->
+       <box size="0.015 0.165 0.150"/> <!-- 12inch -->
      </geometry>
      <material name="Display">
        <color rgba="0.15 0.15 0.15 1.0"/>
@@ -173,14 +174,15 @@
    </visual>
    <collision>
      <geometry>
-       <box size="0.03 0.817 0.342"/>
+       <!--box size="0.03 0.817 0.342"/-->
+       <box size="0.015 0.165 0.150"/> <!-- 12inch -->
      </geometry>
    </collision>
   </link>
   <joint name="base_to_dispaly" type="fixed">
     <parent link="dual_arm_base"/>
     <child  link="display"/>
-    <origin rpy="0.0 0.2 0.0" xyz="0.0 0.0 1.72"/>
+    <origin rpy="0.0 0.2 0.0" xyz="0.0 0.0 1.66"/>
   </joint>
 
   <!-- pan_tilt -->

@@ -1,12 +1,13 @@
 <launch>
   <arg name="model"  default="$(find franka_description)/dual_franka.urdf" />
-  <arg name="paused" default="false" />
+  <arg name="paused" default="true" />
   <!--arg name="gzangles" default="-J JOINT0 -0.2" / use with paused -->
   <arg name="gzangles" default="-J right_joint2 0.261799 -J right_joint6 2.61799 -J right_joint7 0.785398 -J left_joint2 0.261799 -J left_joint6 2.61799 -J left_joint7 0.785398 -J right_joint4 '-'1.5708 -J left_joint4 '-'1.5708" />
   <!--arg name="gzpose"   default="-z 0.3" /-->
   <arg name="gzpose"   default="" />
-  <arg name="control_config" default="dual_franka.gz_controller.yaml" />
-  <arg name="world_name" default="worlds/empty.world" />
+  <arg name="control_config" default="$(find franka_gazebo)/dual_franka.gz_controller.yaml" />
+  <!--arg name="world_name" default="worlds/empty.world" /-->
+  <arg name="world_name" default="$(find franka_gazebo)/tools.world" />
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch" >
     <arg name="paused" value="$(arg paused)" />
@@ -32,6 +33,8 @@
         type="spawner" respawn="false"
         output="screen" args="--shutdown-timeout 0.1
                               joint_state_controller
-                              fullbody_controller" />
+                              larm_controller rarm_controller head_controller
+                              lhand_controller rhand_controller"
+        />
 
 </launch>
