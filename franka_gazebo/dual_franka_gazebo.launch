@@ -1,0 +1,37 @@
+<launch>
+  <arg name="model"  default="$(find franka_description)/dual_franka.urdf" />
+  <arg name="paused" default="false" />
+  <!--arg name="gzangles" default="-J JOINT0 -0.2" / use with paused -->
+  <arg name="gzangles" default="-J right_joint2 0.261799 -J right_joint6 2.61799 -J right_joint7 0.785398 -J left_joint2 0.261799 -J left_joint6 2.61799 -J left_joint7 0.785398 -J right_joint4 '-'1.5708 -J left_joint4 '-'1.5708" />
+  <!--arg name="gzpose"   default="-z 0.3" /-->
+  <arg name="gzpose"   default="" />
+  <arg name="control_config" default="dual_franka.gz_controller.yaml" />
+  <arg name="world_name" default="worlds/empty.world" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+    <arg name="paused" value="$(arg paused)" />
+    <arg name="world_name" value="$(arg world_name)" />
+  </include>
+
+  <!-- Load universal robotic description format (URDF) -->
+  <param name="robot_description" command="$(find xacro)/xacro '$(arg model)'" />
+
+  <node pkg="gazebo_ros" type="spawn_model" name="urdf_spawner"
+        respawn="false" output="screen"
+        args="$(arg gzpose) -urdf -model dual_franka -param robot_description $(arg gzangles)" />
+
+  <!-- convert joint states to TF transforms -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen" />
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(arg control_config)" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager"
+        type="spawner" respawn="false"
+        output="screen" args="--shutdown-timeout 0.1
+                              joint_state_controller
+                              fullbody_controller" />
+
+</launch>

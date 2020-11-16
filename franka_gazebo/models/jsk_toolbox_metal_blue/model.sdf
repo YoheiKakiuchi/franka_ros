@@ -1,0 +1,164 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="jsk_toolbox_metal_blue">
+    <link name="link">
+      <pose>0 0 0 0 0 0</pose>
+
+      <collision name="col0">
+        <pose> 0.0864 0.00336 0.1074 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.0792 0.3492 0.0036 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col1">
+        <pose> 0.1242 0.00336 0.1314 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.0036 0.3492 0.0444 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col2">
+        <pose> 0.0486 0.00336 0.1314 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.0036 0.3492 0.0444 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col3">
+        <pose> 0.0864 0.17616 0.1314 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.072 0.0036 0.0444 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col4">
+        <pose> 0.0864 -0.16944 0.1314 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.072 0.0036 0.0444 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col5">
+        <pose> -0.0792 0.00336 0.1074 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.0792 0.3492 0.0036 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col6">
+        <pose> -0.0414 0.00336 0.1332 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.0036 0.3492 0.048 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col7">
+        <pose> -0.117 0.00336 0.1332 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.0036 0.3492 0.048 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col8">
+        <pose> -0.0792 0.17616 0.1332 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.072 0.0036 0.048 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col9">
+        <pose> -0.0792 -0.16944 0.1332 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.072 0.0036 0.048 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col10">
+        <pose> 0.0036 0.00336 0.0018 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.18 0.3492 0.0036 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col11">
+        <pose> 0.0918 0.00336 0.0534 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.0036 0.3492 0.0996 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col12">
+        <pose> -0.0846 0.00336 0.0534 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.0036 0.3492 0.0996 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col13">
+        <pose> 0.0036 0.17616 0.0534 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.1728 0.0036 0.0996 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="col14">
+        <pose> 0.0036 -0.16944 0.0534 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.1728 0.0036 0.0996 </size>
+          </box>
+        </geometry>
+      </collision>
+      <!-- -->
+      <collision name="handle_col0">
+        <pose> 0.13896 0.0 0.1932 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.012 0.3552 0.012 </size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="handle_col1">
+        <pose> -0.13536 0.0 0.1932 0 0 0</pose>
+        <geometry>
+          <box>
+            <size> 0.012 0.3552 0.012 </size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="bodyMesh">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://jsk_toolbox_metal_blue/meshes/toolbox_metal.dae</uri>
+            <scale>1.2 1.2 1.2</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://jsk_toolbox_metal_blue/materials/scripts</uri>
+            <uri>model://jsk_toolbox_metal_blue/materials/textures</uri>
+            <name>toolbox_blue</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <static>1</static>
+  </model>
+</sdf>

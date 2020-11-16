@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="jsk_hammer">
+    <static>false</static>
+    <inertial>
+      <mass>0.5</mass>
+      <pose> 0.02 0 0 0 0 0</pose>
+      <inertia>
+        <ixx>6.0e-5</ixx>
+        <iyy>2.0e-3</iyy>
+        <izz>2.0e-3</izz>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyz>0</iyz>
+      </inertia>
+    </inertial>
+    <link name="link">
+      <!--
+      <pose>0 0 0 0 0 0</pose>
+
+      <collision name="shaft">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.3</length>
+          </cylinder>
+        </geomtry>
+      </collision>
+      <collision name="head">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.3</length>
+          </cylinder>
+        </geomtry>
+      </collision>
+-->
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://hammer/meshes/hammer.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://hammer/meshes/hammer.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

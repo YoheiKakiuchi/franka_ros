@@ -1,0 +1,24 @@
+<package>
+  <name>franka_gazebo</name>
+  <version>0.0.1</version>
+  <description>models for gazebo</description>
+
+  <maintainer email="youhei@jsk.imi.i.u-tokyo.ac.jp">Youhei Kakiuchi</maintainer>
+  <author email="youhei@jsk.imi.i.u-tokyo.ac.jp">Youhei Kakiuchi</author>
+
+  <license>BSD</license>
+
+  <!--url type="website"></url-->
+  <!--url type="repository"></url-->
+  <!--url type="bugtracker"></url-->
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>xacro</build_depend>
+  <build_depend>gazebo_ros</build_depend>
+  <run_depend>xacro</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+
+  <export>
+    <gazebo_ros gazebo_model_path="${prefix}/models" />
+  </export>
+</package>
