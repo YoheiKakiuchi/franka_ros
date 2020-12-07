@@ -1,0 +1,18 @@
+Dockerfile.gazebo     jsk/franka_gazebo:gazebo
+   Dockerfile.nvidia  jsk/franka_gazebo:gazeboe_nvidia
+      Dockerfile.rviz jsk/franka_gazebo:rviz_nvidia
+   Dockerfile.rviz    jsk/franka_gazebo:rviz
+
+
+docker_compose.yaml
+docker_compose_nvidia.yaml
+
+docker build -f Dockerfile.gazebo -t jsk/franka_gazebo:gazebo .
+
+## copy from tmc_wrs_binary
+wget https://github.com/hsr-project/tmc_wrs_binary/raw/master/Dockerfile.nvidia
+
+docker build -f Dockerfile.nvidia --build-arg BASE_IMAGE=jsk/franka_gazebo:gazebo -t jsk/franka_gazebo:gazebo_nvidia .
+
+#docker build -f Dockerfile.rviz -t jsk/franka_gazebo:rviz .
+#docker build -f Dockerfile.nvidia -t jsk/franka_gazebo:rviz_nvidia .

@@ -1,0 +1,39 @@
+FROM osrf/ros:melodic-desktop-full
+
+SHELL ["/bin/bash", "-c"]
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update -q -qq && \
+    apt-get install -q -qq -y \
+    curl apt-transport-https python-pip mesa-utils apt-utils \
+    ros-${ROS_DISTRO}-catkin python-wstools python-catkin-tools && \
+    pip install -U --ignore-installed pyassimp supervisor supervisor_twiddler && \
+    apt-get upgrade -q -qq -y && \
+    apt-get autoremove -y && \    
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/
+    
+WORKDIR /gazebo_ws
+RUN wstool init /gazebo_ws/src
+RUN wstool set franka_ros https://github.com/YoheiKakiuchi/franka_ros.git -y -t src --git -v add_dual_arm
+RUN wstool set universal_robot https://github.com/YoheiKakiuchi/universal_robot.git -y -t src --git -v add_dual_arm
+RUN wstool update -t src
+# RUN cd /gazebo_ws/src && source /opt/ros/$ROS_DISTRO/setup.bash && catkin_init_workspace || true
+
+RUN apt-get update -q -qq && \
+    source /opt/ros/$ROS_DISTRO/setup.bash && \
+    rosdep update && rosdep install --from-paths src --ignore-src -r -y || true && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/
+
+RUN source /opt/ros/$ROS_DISTRO/setup.bash && catkin build franka_gazebo ur_e_description
+
+## build franka_ros? franka_gazebo
+RUN source /gazebo_ws/devel/setup.bash && roscd franka_description && rosrun xacro xacro --inorder robots/dual_panda_robot.urdf.xacro > dual_franka.urdf
+
+ADD gazebo-entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
+ADD supervisord.conf /etc/supervisor/supervisord.conf
+CMD ["/usr/local/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
