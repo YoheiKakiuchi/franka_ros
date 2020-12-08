@@ -39,25 +39,25 @@
       <visual>
         <origin xyz="0.000000 0.000000 0.000000" rpy="0.00000000 -0.00000000 0.00000000"/>
         <geometry>
-          <mesh filename="package://ur_e_description/pan_tilt/meshes/xm430_dynamixel.dae" scale="1.000000 1.000000 1.000000"/>
+          <mesh filename="package://franka_description/pan_tilt/meshes/xm430_dynamixel.dae" scale="1.000000 1.000000 1.000000"/>
         </geometry>
       </visual>
       <collision>
         <origin xyz="0.000000 0.000000 0.000000" rpy="0.00000000 -0.00000000 0.00000000"/>
         <geometry>
-          <mesh filename="package://ur_e_description/pan_tilt/meshes/xm430_dynamixel.dae" scale="1.000000 1.000000 1.000000"/>
+          <mesh filename="package://franka_description/pan_tilt/meshes/xm430_dynamixel.dae" scale="1.000000 1.000000 1.000000"/>
         </geometry>
       </collision>
       <visual>
         <origin xyz="-0.000000 -0.000000 -0.003000" rpy="-1.57079633 0.00000000 3.14159265"/>
         <geometry>
-          <mesh filename="package://ur_e_description/pan_tilt/meshes/fr12_x102.dae" scale="1.000000 1.000000 1.000000"/>
+          <mesh filename="package://franka_description/pan_tilt/meshes/fr12_x102.dae" scale="1.000000 1.000000 1.000000"/>
         </geometry>
       </visual>
       <collision>
         <origin xyz="-0.000000 -0.000000 -0.003000" rpy="-1.57079633 0.00000000 3.14159265"/>
         <geometry>
-          <mesh filename="package://ur_e_description/pan_tilt/meshes/fr12_x102.dae" scale="1.000000 1.000000 1.000000"/>
+          <mesh filename="package://franka_description/pan_tilt/meshes/fr12_x102.dae" scale="1.000000 1.000000 1.000000"/>
         </geometry>
       </collision>
     </link>
@@ -71,13 +71,13 @@
       <visual>
         <origin xyz="0.000000 0.000000 -0.019000" rpy="0.00000000 1.57079633 0.00000000"/>
         <geometry>
-          <mesh filename="package://ur_e_description/pan_tilt/meshes/fr12_h101s.dae" scale="1.000000 1.000000 1.000000"/>
+          <mesh filename="package://franka_description/pan_tilt/meshes/fr12_h101s.dae" scale="1.000000 1.000000 1.000000"/>
         </geometry>
       </visual>
       <collision>
         <origin xyz="0.000000 0.000000 -0.019000" rpy="0.00000000 1.57079633 0.00000000"/>
         <geometry>
-          <mesh filename="package://ur_e_description/pan_tilt/meshes/fr12_h101s.dae" scale="1.000000 1.000000 1.000000"/>
+          <mesh filename="package://franka_description/pan_tilt/meshes/fr12_h101s.dae" scale="1.000000 1.000000 1.000000"/>
         </geometry>
       </collision>
     </link>
@@ -100,13 +100,13 @@
       <visual>
         <origin xyz="0.000000 0.000000 0.000000" rpy="0.00000000 -0.00000000 0.00000000"/>
         <geometry>
-          <mesh filename="package://ur_e_description/pan_tilt/meshes/xm430_dynamixel.dae" scale="1.000000 1.000000 1.000000"/>
+          <mesh filename="package://franka_description/pan_tilt/meshes/xm430_dynamixel.dae" scale="1.000000 1.000000 1.000000"/>
         </geometry>
       </visual>
       <collision>
         <origin xyz="0.000000 0.000000 0.000000" rpy="0.00000000 -0.00000000 0.00000000"/>
         <geometry>
-          <mesh filename="package://ur_e_description/pan_tilt/meshes/xm430_dynamixel.dae" scale="1.000000 1.000000 1.000000"/>
+          <mesh filename="package://franka_description/pan_tilt/meshes/xm430_dynamixel.dae" scale="1.000000 1.000000 1.000000"/>
         </geometry>
       </collision>
     </link>
@@ -120,13 +120,13 @@
       <visual>
         <origin xyz="0.000000 0.000000 -0.019000" rpy="0.00000000 1.57079633 1.57079633"/>
         <geometry>
-          <mesh filename="package://ur_e_description/pan_tilt/meshes/fr12_h101.dae" scale="1.000000 1.000000 1.000000"/>
+          <mesh filename="package://franka_description/pan_tilt/meshes/fr12_h101.dae" scale="1.000000 1.000000 1.000000"/>
         </geometry>
       </visual>
       <collision>
         <origin xyz="0.000000 0.000000 -0.019000" rpy="0.00000000 1.57079633 1.57079633"/>
         <geometry>
-          <mesh filename="package://ur_e_description/pan_tilt/meshes/fr12_h101.dae" scale="1.000000 1.000000 1.000000"/>
+          <mesh filename="package://franka_description/pan_tilt/meshes/fr12_h101.dae" scale="1.000000 1.000000 1.000000"/>
         </geometry>
       </collision>
     </link>
