@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="hand">
   <!-- safety_distance: Minimum safety distance in [m] by which the collision volumes are expanded and which is enforced during robot motions -->
+  <xacro:macro name="gripper_gazebo" params="link mu1:=10.0 mu2:=10.0">
+    <gazebo reference="${link}">
+      <mu1>${mu1}</mu1>
+      <mu2>${mu2}</mu2>
+      <maxVel>1</maxVel>
+      <kp>1000000.0</kp>
+      <kd>100.0</kd> 
+      <fdir1>0 0 1</fdir1>
+      <minDepth>0.0</minDepth>
+      <maxContacts>100</maxContacts>
+    </gazebo>
+  </xacro:macro>
+
   <xacro:macro name="hand" params="connected_to:='' ns:='' rpy:='0 0 0' xyz:='0 0 0' safety_distance:=0">
     <xacro:unless value="${connected_to == ''}">
       <joint name="${ns}_hand_joint" type="fixed">
@@ -117,5 +130,8 @@
       <limit effort="20" lower="0.0" upper="0.04" velocity="0.2"/>
       <mimic joint="${ns}_finger_joint1" />
     </joint>
+    <xacro:gripper_gazebo link="${ns}_hand"/>
+    <xacro:gripper_gazebo link="${ns}_leftfinger"/>
+    <xacro:gripper_gazebo link="${ns}_rightfinger"/>
   </xacro:macro>
 </robot>
