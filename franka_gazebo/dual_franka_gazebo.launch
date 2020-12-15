@@ -1,5 +1,5 @@
 <launch>
-  <arg name="model"  default="$(find franka_description)/dual_franka.urdf" />
+  <arg name="model"  default="$(find franka_description)/robots/dual_panda_robot.urdf.xacro"/>
   <arg name="paused" default="true" />
   <!--arg name="gzangles" default="-J JOINT0 -0.2" / use with paused -->
   <arg name="gzangles" default="-J right_joint2 0.261799 -J right_joint6 2.61799 -J right_joint7 0.785398 -J left_joint2 0.261799 -J left_joint6 2.61799 -J left_joint7 0.785398 -J right_joint4 '-'1.5708 -J left_joint4 '-'1.5708" />
