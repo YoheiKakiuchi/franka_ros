@@ -2,7 +2,7 @@
 <!-- copy from openni_description -->
 <robot name="sensor_openni" xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find ur_e_description)/pan_tilt/kinect_gazebo.urdf.xacro" />
+  <xacro:include filename="$(find franka_description)/pan_tilt/kinect_gazebo.urdf.xacro" />
   
   <!-- Parameterised in part by the values in turtlebot_properties.urdf.xacro -->
   <xacro:macro name="sensor_kinect" params="parent cam_px cam_py cam_pz cam_or cam_op cam_oy">
@@ -29,7 +29,7 @@
       <visual>
        <origin xyz="0 0 0" rpy="0 0 ${M_PI/2}"/>
         <geometry>
-         <mesh filename="package://ur_e_description/pan_tilt/meshes/kinect.dae"/>
+         <mesh filename="package://franka_description/pan_tilt/meshes/kinect.dae"/>
         </geometry>
       </visual>
   	  <collision>

@@ -2,8 +2,8 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find ur_e_description)/pan_tilt/pan_tilt_base.urdf.xacro" />
-  <xacro:include filename="$(find ur_e_description)/pan_tilt/kinect.urdf.xacro" />
+  <xacro:include filename="$(find franka_description)/pan_tilt/pan_tilt_base.urdf.xacro" />
+  <xacro:include filename="$(find franka_description)/pan_tilt/kinect.urdf.xacro" />
   <!--xacro:include filename="$(find openni_description)/model/kinect.urdf.xacro" /-->
 
   <xacro:macro name="pan_tilt_kinect"
